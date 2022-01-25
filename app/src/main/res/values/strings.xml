@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">Note Book</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="buy_now">Buy Now</string>
+    <string name="thumbnail">thumbnail</string>
+    <string name="hello_notebook">Hello notebook</string>
+    <string name="this_is_description">this is description</string>
+    <string name="large_text">
+
+    </string>
+    <string name="hello_profile_fragment">Hello profile fragment</string>
+    <string name="todo">TODO</string>
+    <string name="user_name">User Name</string>
+    <string name="home">home</string>
+    <string name="search">Search</string>
+    <string name="upload">Upload</string>
+    <string name="profile">Profile</string>
+    <string name="enter_note_title">Enter Note Title</string>
+    <string name="enter_the_description">Enter the description</string>
+    <string name="no_file_selected">No file selected</string>
+    <string name="enter_note_price">Enter note price</string>
+    <string name="no_file_found_upload_some_files">No file found upload some files</string>
+    <string name="enter_username">Enter UserName</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="login">Login</string>
+    <string name="enter_mobile_number">Enter Mobile Number</string>
+    <string name="enter_e_mail_id">Enter E mail id</string>
+    <string name="enter_full_name">Enter full name</string>
+    <string name="somesh_verma">Somesh Verma</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="or">Or</string>
+    <string name="sign_up_with_google">Sign Up with Google</string>
+    <string name="sign_in_with_google">Sign In with Google</string>
+    <string name="already_have_an_account">Already have an account</string>
+    <string name="create_new_account">Create new account</string>
+    <string name="facebook">Facebook</string>
+    <string name="google">Google</string>
+    <string name="log_in_sign_up">Log In/Sign UP</string>
+    <string name="your_uploads">Your Uploads</string>
+    <string name="check_all_your_uploaded_notes">Check all your uploaded notes</string>
+    <string name="orders">Orders</string>
+    <string name="check_all_your_orders">Check all your orders</string>
+    <string name="faqs">FAQs</string>
+    <string name="about_us">ABOUT US</string>
+    <string name="terms_of_use">TERMS OF USE</string>
+    <string name="privacy_policy">PRIVACY POLICY</string>
+    <string name="log_out">Log Out</string>
+</resources>

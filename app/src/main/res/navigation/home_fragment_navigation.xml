@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_fragment_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.vermaji.notebook.fragments.homeFragment.HomeFragment"
+        android:label="HomeFragment">
+        <action
+            android:id="@+id/action_homeFragment_to_details"
+            app:destination="@id/details"
+            app:popUpTo="@id/details" />
+        <action
+            android:id="@+id/action_homeFragment_to_profile"
+            app:destination="@id/profile"
+            app:popUpTo="@id/profile" />
+        <action
+            android:id="@+id/action_homeFragment_to_upload"
+            app:destination="@id/upload"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/details"
+        android:name="com.vermaji.notebook.fragments.detailsFragment.Details"
+        android:label="Details" />
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.vermaji.notebook.fragments.profileFragment.Profile"
+        android:label="Profile" />
+    <fragment
+        android:id="@+id/upload"
+        android:name="com.vermaji.notebook.fragments.uploadFragment.Upload"
+        android:label="fragment_upload"
+        tools:layout="@layout/fragment_upload" />
+</navigation>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "156225384535",
+    "project_id": "note-book-615ac",
+    "storage_bucket": "note-book-615ac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:156225384535:android:ceef1a88a40a1fc56b3312",
+        "android_client_info": {
+          "package_name": "com.vermaji.notebook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "156225384535-a0ut5sdlpal1j9agotpod3cmcs487ors.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAChqIcpcU-zLUS_csNL6NaF3KvNCYkp7A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "156225384535-a0ut5sdlpal1j9agotpod3cmcs487ors.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
