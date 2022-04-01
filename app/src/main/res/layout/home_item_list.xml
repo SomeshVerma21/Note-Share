@@ -7,7 +7,7 @@
             type="com.vermaji.notebook.database.NoteProperty" />
         <variable
             name="clickListener"
-            type="com.vermaji.notebook.fragments.homeFragment.HomeItemListener" />
+            type="com.vermaji.notebook.mainUI.homeFragment.HomeItemListener" />
     </data>
     <LinearLayout
         android:layout_width="match_parent"

@@ -1,4 +1,4 @@
-package com.vermaji.notebook.viewModels
+package com.vermaji.notebook.mainUI.viewModels
 
 data class NoteData(
         var noteId:Long,

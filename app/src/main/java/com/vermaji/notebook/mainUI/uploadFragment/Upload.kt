@@ -1,4 +1,4 @@
-package com.vermaji.notebook.fragments.uploadFragment
+package com.vermaji.notebook.mainUI.uploadFragment
 
 import android.content.ActivityNotFoundException
 import android.net.Uri
@@ -16,8 +16,8 @@ import com.vermaji.notebook.R
 import com.vermaji.notebook.database.NoteDatabase
 import com.vermaji.notebook.database.NoteProperty
 import com.vermaji.notebook.databinding.FragmentUploadBinding
-import com.vermaji.notebook.viewModels.NoteViewModel
-import com.vermaji.notebook.viewModels.ViewModelFactory
+import com.vermaji.notebook.mainUI.viewModels.NoteViewModel
+import com.vermaji.notebook.mainUI.viewModels.ViewModelFactory
 
 class Upload : Fragment() {
     private lateinit var binding:FragmentUploadBinding

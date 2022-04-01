@@ -1,11 +1,9 @@
-package com.vermaji.notebook.viewModels
+package com.vermaji.notebook.mainUI.viewModels
 
 import android.app.Application
-import android.net.Uri
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
-import com.vermaji.notebook.R
 import com.vermaji.notebook.database.NoteDatabaseDao
 import com.vermaji.notebook.database.NoteProperty
 import kotlinx.coroutines.launch

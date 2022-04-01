@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.vermaji.notebook.fragments.homeFragment.HomeFragment"
+        android:name="com.vermaji.notebook.mainUI.homeFragment.HomeFragment"
         android:label="HomeFragment">
         <action
             android:id="@+id/action_homeFragment_to_details"
@@ -25,15 +25,15 @@
     </fragment>
     <fragment
         android:id="@+id/details"
-        android:name="com.vermaji.notebook.fragments.detailsFragment.Details"
+        android:name="com.vermaji.notebook.mainUI.detailsFragment.Details"
         android:label="Details" />
     <fragment
         android:id="@+id/profile"
-        android:name="com.vermaji.notebook.fragments.profileFragment.Profile"
+        android:name="com.vermaji.notebook.mainUI.profileFragment.Profile"
         android:label="Profile" />
     <fragment
         android:id="@+id/upload"
-        android:name="com.vermaji.notebook.fragments.uploadFragment.Upload"
+        android:name="com.vermaji.notebook.mainUI.uploadFragment.Upload"
         android:label="fragment_upload"
         tools:layout="@layout/fragment_upload" />
 </navigation>

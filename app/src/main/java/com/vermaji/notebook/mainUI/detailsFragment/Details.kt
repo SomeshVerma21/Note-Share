@@ -1,4 +1,4 @@
-package com.vermaji.notebook.fragments.detailsFragment
+package com.vermaji.notebook.mainUI.detailsFragment
 
 import android.os.Bundle
 import android.view.LayoutInflater

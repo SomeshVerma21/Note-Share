@@ -1,4 +1,4 @@
-package com.vermaji.notebook.fragments.profileFragment
+package com.vermaji.notebook.mainUI.profileFragment
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,8 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import com.vermaji.notebook.LoginActivity
-import com.vermaji.notebook.MainActivity
+import com.vermaji.notebook.loginService.LoginActivity
 import com.vermaji.notebook.R
 import com.vermaji.notebook.databinding.FragmentProfileBinding
 
@@ -20,7 +19,7 @@ class Profile : Fragment() {
     ): View? {
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_profile,container,false)
         binding.idLoginLogout.setOnClickListener(View.OnClickListener {
-            val intent = Intent(activity,LoginActivity::class.java)
+            val intent = Intent(activity, LoginActivity::class.java)
             startActivity(intent)
         })
         return binding.root

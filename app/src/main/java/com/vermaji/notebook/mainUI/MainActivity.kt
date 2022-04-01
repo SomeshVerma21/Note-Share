@@ -1,4 +1,4 @@
-package com.vermaji.notebook
+package com.vermaji.notebook.mainUI
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,18 +10,21 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import com.google.firebase.database.FirebaseDatabase
+import com.vermaji.notebook.loginService.LoginActivity
+import com.vermaji.notebook.R
 import com.vermaji.notebook.database.NoteDatabase
 import com.vermaji.notebook.databinding.ActivityMainBinding
-import com.vermaji.notebook.viewModels.NoteViewModel
-import com.vermaji.notebook.viewModels.ViewModelFactory
+import com.vermaji.notebook.mainUI.viewModels.NoteViewModel
+import com.vermaji.notebook.mainUI.viewModels.ViewModelFactory
 
 class MainActivity : AppCompatActivity() {
     private lateinit var firebaseDatabase: FirebaseDatabase
     private lateinit var binding:ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        supportActionBar?.hide()
         firebaseDatabase = FirebaseDatabase.getInstance()
-        binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.bottomNavigationView.setOnItemSelectedListener {
             val navController:NavController = findNavController(R.id.homeScreenFragment)
             when (it.itemId) {
@@ -31,12 +34,12 @@ class MainActivity : AppCompatActivity() {
                 R.id.menu_search_navigation -> {
 
                 }
-                R.id.menu_upload_navigation-> {
+                R.id.menu_upload_navigation -> {
                     findNavController(R.id.homeScreenFragment).navigate(R.id.upload)
                 }
                 R.id.menu_profile_navigation ->{
                     findNavController(R.id.homeScreenFragment).navigate(R.id.profile)
-                    val intent = Intent(this,LoginActivity::class.java)
+                    val intent = Intent(this, LoginActivity::class.java)
                     //startActivity(intent)
                 }
             }
@@ -55,7 +58,6 @@ class MainActivity : AppCompatActivity() {
         val viewModelFactory = ViewModelFactory(dataSource,application)
         val noteViewModel = ViewModelProvider(this,viewModelFactory).get(NoteViewModel::class.java)
         noteViewModel.deleteAll()
-        findNavController(R.id.homeItemRecyclerView).navigate(R.id.homeFragment)
         return true
     }
 }

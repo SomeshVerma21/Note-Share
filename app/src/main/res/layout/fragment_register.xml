@@ -8,33 +8,33 @@
         android:layout_height="match_parent"
         android:gravity="center_vertical"
         >
+
         <EditText
-            android:id="@+id/idRegName"
+            android:id="@+id/idRegFullName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
             android:hint="@string/enter_full_name"
             android:inputType="text"
-            android:textAlignment="center"
-            android:layout_marginStart="40dp"
-            android:layout_marginEnd="40dp"
-            />
+            android:textAlignment="center" />
+
         <EditText
-            android:id="@+id/idRegUserName"
+            android:id="@+id/idRegEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/idRegName"
+            android:layout_below="@+id/idRegFullName"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="40dp"
             android:hint="@string/enter_e_mail_id"
             android:inputType="text"
-            android:textAlignment="center"
-            android:layout_marginStart="40dp"
-            android:layout_marginEnd="40dp"
-            android:layout_marginTop="40dp"
-            />
+            android:textAlignment="center" />
         <EditText
             android:id="@+id/idRegPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/idRegUserName"
+            android:layout_below="@+id/idRegEmail"
             android:hint="@string/enter_password"
             android:inputType="textPassword"
             android:textAlignment="center"
@@ -78,7 +78,8 @@
                 android:layout_marginEnd="5dp"
                 android:text="@string/google"
                 android:drawableLeft="@drawable/common_google_signin_btn_icon_dark"
-                app:backgroundTint="#AF8F8F" />
+                app:backgroundTint="#AF8F8F"
+                style="?android:attr/buttonBarButtonStyle" />
             <Button
                 android:id="@+id/idBtnFacebook"
                 android:layout_width="150dp"
