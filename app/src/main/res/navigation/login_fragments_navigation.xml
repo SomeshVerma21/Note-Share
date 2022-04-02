@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/login"
-        android:name="com.vermaji.notebook.loginService.fragments.Login"
+        android:name="com.vermaji.noteshare.loginService.fragments.Login"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/register"
-        android:name="com.vermaji.notebook.loginService.fragments.Register"
+        android:name="com.vermaji.noteshare.loginService.fragments.Register"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" >
         <action

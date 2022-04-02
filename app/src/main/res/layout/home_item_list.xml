@@ -4,16 +4,15 @@
     <data>
         <variable
             name="noteBook"
-            type="com.vermaji.notebook.database.NoteProperty" />
+            type="com.vermaji.noteshare.database.NoteProperty" />
         <variable
             name="clickListener"
-            type="com.vermaji.notebook.mainUI.homeFragment.HomeItemListener" />
+            type="com.vermaji.noteshare.mainUI.homeFragment.HomeItemListener" />
     </data>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:onClick="@{()->clickListener.onClick(noteBook)}"
         >
         <ImageView
             android:id="@+id/idImgView"

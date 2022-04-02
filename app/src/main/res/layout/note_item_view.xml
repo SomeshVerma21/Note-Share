@@ -5,10 +5,10 @@
     <data>
         <variable
             name="noteBook"
-            type="com.vermaji.notebook.database.NoteProperty" />
+            type="com.vermaji.noteshare.database.NoteProperty" />
         <variable
             name="clickListener"
-            type="com.vermaji.notebook.mainUI.homeFragment.HomeItemListener" />
+            type="com.vermaji.noteshare.mainUI.homeFragment.HomeItemListener" />
     </data>
     <com.google.android.material.card.MaterialCardView
         android:layout_width="wrap_content"
