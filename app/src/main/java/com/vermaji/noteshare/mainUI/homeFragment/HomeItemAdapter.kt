@@ -5,21 +5,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.vermaji.noteshare.database.NoteProperty
 import com.vermaji.noteshare.databinding.NoteItemViewBinding
+import com.vermaji.noteshare.mainUI.homeFragment.models.Data
+import com.vermaji.noteshare.mainUI.homeFragment.models.NoteResponse
 
-class HomeItemAdapter( private val clickListener: HomeItemListener)
+class HomeItemAdapter(private val responseData:NoteResponse,private val clickListener: HomeItemListener)
     : RecyclerView.Adapter<HomeItemAdapter.NoteItemViewHolder>() {
-    private var homeItems = mutableListOf<NoteProperty>(
-        NoteProperty(id = 0, imgSrc = 1,"Hello Note",
-        description = "note book description", price = "1001"),
-        NoteProperty(id = 0, imgSrc = 1,"Hello Note",
-            description = "note book description", price = "1001"),
-        NoteProperty(id = 0, imgSrc = 1,"Hello Note",
-            description = "note book description", price = "1001"),
-        NoteProperty(id = 0, imgSrc = 1,"Hello Note",
-            description = "note book description", price = "1001"),
-        NoteProperty(id = 0, imgSrc = 1,"Hello Note",
-            description = "note book description", price = "1001")
-    )
+    val list = responseData.list
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteItemViewHolder
     {
         return NoteItemViewHolder.getViewHolder(parent)
@@ -27,18 +18,19 @@ class HomeItemAdapter( private val clickListener: HomeItemListener)
 
     override fun onBindViewHolder(holder: NoteItemViewHolder, position: Int)
     {
-        holder.bind(homeItems[position],clickListener)
+        holder.bind(list[position],clickListener)
     }
 
     override fun getItemCount(): Int {
-        return homeItems.size
+        return list.size
     }
     class NoteItemViewHolder private constructor(private val binding: NoteItemViewBinding): RecyclerView.ViewHolder(binding.root)
     {
-        fun bind(item: NoteProperty, clickListener: HomeItemListener)
+        fun bind(item: Data, clickListener: HomeItemListener)
         {
-            binding.noteBook = item
-            binding.clickListener=clickListener
+            binding.idNoteDownloadCount.text = item.downloads.toString()+" Downloads"
+            binding.clickListener = clickListener
+            binding.notesData = item
             binding.executePendingBindings()
         }
         companion object
@@ -54,8 +46,8 @@ class HomeItemAdapter( private val clickListener: HomeItemListener)
 }
 class HomeItemListener(val clickListener:(itemId:Long)->Unit)
 {
-    fun onClick(noteItem: NoteProperty)
+    fun onClick(noteItem: Data)
     {
-        return clickListener(noteItem.id)
+        return clickListener(noteItem.id.toLong())
     }
 }

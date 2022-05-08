@@ -6,8 +6,9 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class CategoriesResponseItem(
-    @Json(name = "mainCategory")
-    val mainCategory: String,
-    @Json(name = "subCategories")
-    val subCategories: List<String>
+    @Json(name = "category")
+    val category: String,
+    @Json(name = "subcategory")
+    val subcategory: List<String>
+
 )

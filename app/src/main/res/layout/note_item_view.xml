@@ -4,8 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <variable
-            name="noteBook"
-            type="com.vermaji.noteshare.database.NoteProperty" />
+            name="notesData"
+            type="com.vermaji.noteshare.mainUI.homeFragment.models.Data" />
         <variable
             name="clickListener"
             type="com.vermaji.noteshare.mainUI.homeFragment.HomeItemListener" />
@@ -16,6 +16,7 @@
         app:cardCornerRadius="2dp"
         app:strokeWidth="1dp"
         app:strokeColor="#939393"
+        android:onClick="@{()->clickListener.onClick(notesData)}"
         >
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="100dp"
@@ -46,7 +47,7 @@
                 android:layout_marginStart="2dp"
                 android:layout_marginEnd="2dp"
                 android:maxLines="1"
-                android:text="Tittle of the text"
+                android:text="@{notesData.name}"
                 android:textColor="@color/black"
                 android:textSize="11sp"
                 android:textStyle="bold"
@@ -61,7 +62,7 @@
                 android:layout_marginStart="2dp"
                 android:layout_marginEnd="2dp"
                 android:maxLines="2"
-                android:text="Description of note "
+                android:text="@{notesData.desc}"
                 android:textColor="@color/black"
                 android:textSize="8sp"
                 android:textStyle="normal"
@@ -91,6 +92,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/view2" />
 
             <androidx.appcompat.widget.AppCompatImageView
+                android:visibility="gone"
                 android:id="@+id/idNoteFavorite"
                 android:layout_width="15dp"
                 android:layout_height="15dp"
@@ -103,10 +105,10 @@
                 app:layout_constraintTop_toBottomOf="@+id/view2" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/idNoteViewCount"
+                android:id="@+id/idNoteDownloadCount"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="10k views"
+                android:text="10k Downloads"
                 android:layout_margin="3dp"
                 android:textColor="@color/black"
                 android:textSize="8dp"

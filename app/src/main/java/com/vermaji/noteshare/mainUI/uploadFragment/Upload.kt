@@ -4,6 +4,7 @@ import android.app.Activity.RESULT_CANCELED
 import android.app.Activity.RESULT_OK
 import android.content.Intent
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +13,7 @@ import android.view.inputmethod.EditorInfo
 import android.widget.AdapterView.OnItemClickListener
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -30,7 +32,7 @@ class Upload : Fragment() {
     var subCategoryArrayAdapter:ArrayAdapter<String>?=null
     var categories:CategoriesResponse?=null
     var selectedCategory:CategoriesResponseItem?=null
-    private var uriData:Uri?=null
+    var fileUri:Uri?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel = ViewModelProvider(this)[UploadViewModel::class.java]
@@ -43,6 +45,7 @@ class Upload : Fragment() {
         return binding.root
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val languageAdapter = ArrayAdapter(requireContext(),android.R.layout.simple_dropdown_item_1line,
@@ -56,7 +59,7 @@ class Upload : Fragment() {
             val category = mutableListOf<String>()
             categories = it
             for (item in it){
-                category.add(item.mainCategory)
+                category.add(item.category)
             }
             val arrayAdapter = ArrayAdapter(requireContext(),android.R.layout.simple_dropdown_item_1line,category)
             binding.idNoteCategory.setAdapter(arrayAdapter)
@@ -65,8 +68,8 @@ class Upload : Fragment() {
             OnItemClickListener { parent, arg1, pos, id ->
                 binding.idSubCategory.text.clear()
                 selectedCategory = categories?.get(pos)
-                Toast.makeText(requireContext(),selectedCategory?.mainCategory,Toast.LENGTH_SHORT).show()
-                val list = selectedCategory?.subCategories!!
+                Toast.makeText(requireContext(),selectedCategory?.category,Toast.LENGTH_SHORT).show()
+                val list = selectedCategory?.subcategory!!
                 val adapter = ArrayAdapter(requireContext(),android.R.layout.simple_dropdown_item_1line,list)
                 binding.idSubCategory.setAdapter(adapter)
             }
@@ -79,6 +82,25 @@ class Upload : Fragment() {
                 }
             }
             false
+        }
+
+        binding.idBtnUpload.setOnClickListener {
+            val title = binding.idTitleTextField.text.toString()
+            val desc = binding.idDescTextField.text.toString()
+            val category = binding.idNoteCategory.text.toString()
+            val subCategory = binding.idSubCategory.text.toString()
+            val language = binding.idLanguage.text.toString()
+            if (fileUri!=null){
+                if (title.isNotEmpty()&&desc.isNotEmpty()&&category.isNotEmpty()&&subCategory.isNotEmpty()
+                    &&language.isNotEmpty()){
+                    viewModel.uploadFile(fileUri!!)
+                }else{
+                    Toast.makeText(requireContext(),"One or more fields are empty",Toast.LENGTH_SHORT).show()
+                }
+            }else
+            {
+                Toast.makeText(requireContext(),"Select a file or pdf to upload",Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
@@ -102,6 +124,7 @@ class Upload : Fragment() {
                 101 -> {
                     if (resultCode==RESULT_OK&&data!=null){
                         val selectedFileUri = data.data
+                        fileUri = selectedFileUri
                         Toast.makeText(requireContext(),selectedFileUri.toString(),Toast.LENGTH_SHORT).show()
                     }
                 }
