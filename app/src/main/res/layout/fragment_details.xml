@@ -1,84 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".mainUI.detailsFragment.Details"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".mainUI.detailsFragment.Details">
-
-        <androidx.coordinatorlayout.widget.CoordinatorLayout
-            android:id="@+id/coordinatorLayout"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="50dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-            <ImageView
-                android:id="@+id/idFullThumbnail"
-                app:srcCompat="@drawable/ic_note_book"
-                android:layout_width="140dp"
-                android:layout_height="140dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="50dp"
-                android:contentDescription="@string/thumbnail" />
+            android:layout_height="wrap_content"
+            >
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_note_image"
+                android:layout_width="130dp"
+                android:layout_height="190dp"
+                app:cardCornerRadius="5dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                >
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img_note_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/noteshare_logos"
+                    android:scaleType="centerCrop"
+                    />
+            </com.google.android.material.card.MaterialCardView>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_note_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:paddingHorizontal="20dp"
+                android:maxLines="5"
+                android:textSize="28dp"
+                android:textStyle="bold"
+                android:text="Indecent Arrangements: Tabloid Affair, Secretly f ;sdf;s"
+                app:layout_constraintStart_toEndOf="@id/cv_note_image"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_note_author"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:paddingHorizontal="20dp"
+                android:maxLines="5"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                android:textColor="@color/light_blue_400"
+                android:text="Mira Lyn Kelly · Anna Cleary · Julia James"
+                app:layout_constraintStart_toEndOf="@id/cv_note_image"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_note_title"
+                />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_published_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:paddingHorizontal="20dp"
+                android:maxLines="5"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:text="May 2014 · HarperCollins UK"
+                app:layout_constraintStart_toEndOf="@id/cv_note_image"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_note_author"
+                />
 
-            <LinearLayout
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_download_buy_note"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="@android:dimen/thumbnail_height"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="312dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="10dp"
-                    android:padding="10dp"
-                    android:textAlignment="center"
-                    android:text="@string/hello_notebook"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:layout_width="312dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="10dp"
-                    android:padding="10dp"
-                    android:textAlignment="center"
-                    android:textSize="15sp" />
-
-                <TextView
-                    android:layout_width="312dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="10dp"
-                    android:padding="10dp"
-                    android:textAlignment="center"
-                    android:text="@string/this_is_description"
-                    android:textSize="15sp" />
-            </LinearLayout>
-
-        </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/coordinatorLayout">
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
-                android:padding="5dp"
-                android:text="@string/buy_now"
-                android:textSize="25sp"/>
-        </LinearLayout>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                android:background="@color/color_primary"
+                android:text="Free Download"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                app:layout_constraintTop_toBottomOf="@+id/cv_note_image"
+                tools:layout_editor_absoluteX="10dp" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_free_sample"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Free Sample"
+                android:textAllCaps="false"
+                android:textSize="20dp"
+                android:textColor="#00DF1E"
+                android:background="@color/cardview_light_background"
+                app:layout_constraintTop_toBottomOf="@id/btn_download_buy_note"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
 </layout>
