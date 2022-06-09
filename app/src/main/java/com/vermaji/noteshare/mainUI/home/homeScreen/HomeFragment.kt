@@ -1,4 +1,4 @@
-package com.vermaji.noteshare.mainUI.homeFragment
+package com.vermaji.noteshare.mainUI.home.homeScreen
 
 import android.os.Bundle
 import android.util.Log
@@ -14,7 +14,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.vermaji.noteshare.R
 import com.vermaji.noteshare.database.NoteDatabase
 import com.vermaji.noteshare.databinding.FragmentHomeBinding
-import com.vermaji.noteshare.mainUI.viewModels.NoteViewModel
+import com.vermaji.noteshare.mainUI.home.HomeItemAdapter
+import com.vermaji.noteshare.mainUI.home.HomeItemListener
 import com.vermaji.noteshare.mainUI.viewModels.ViewModelFactory
 
 class HomeFragment: Fragment() {
@@ -47,7 +48,7 @@ class HomeFragment: Fragment() {
         val dataSource =  NoteDatabase.getInstence(application).noteDatabaseDao
         val viewModelFactory = ViewModelFactory(dataSource,application)
         noteViewModel._topDownloads.observe(viewLifecycleOwner, Observer { noteResponse ->
-            val mAdapter = HomeItemAdapter(noteResponse,HomeItemListener {
+            val mAdapter = HomeItemAdapter(noteResponse, HomeItemListener {
                 Toast.makeText(requireContext(),it.toString(),Toast.LENGTH_SHORT).show()
             })
             binding.idTopViewingRecyclerView.adapter = mAdapter

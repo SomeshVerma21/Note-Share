@@ -1,4 +1,4 @@
-package com.vermaji.noteshare.mainUI.homeFragment.models
+package com.vermaji.noteshare.mainUI.home.homeScreen.models
 
 
 import com.squareup.moshi.Json

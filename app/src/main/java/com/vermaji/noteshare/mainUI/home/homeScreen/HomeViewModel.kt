@@ -1,10 +1,10 @@
-package com.vermaji.noteshare.mainUI.homeFragment
+package com.vermaji.noteshare.mainUI.home.homeScreen
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.vermaji.noteshare.mainUI.api.RetrofitNoteService
-import com.vermaji.noteshare.mainUI.homeFragment.models.NoteResponse
+import com.vermaji.noteshare.mainUI.home.homeScreen.models.NoteResponse
 import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback

@@ -1,9 +1,8 @@
-package com.vermaji.noteshare.mainUI.uploadFragment
+package com.vermaji.noteshare.mainUI.home.uploadFragment
 
 import android.net.Uri
 import android.os.Build
 import android.util.Log
-import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.core.net.toFile
 import androidx.lifecycle.LiveData
@@ -11,7 +10,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.vermaji.noteshare.mainUI.api.RetrofitNoteService
-import com.vermaji.noteshare.mainUI.uploadFragment.models.CategoriesResponse
+import com.vermaji.noteshare.mainUI.home.uploadFragment.models.CategoriesResponse
 import kotlinx.coroutines.launch
 import okhttp3.MediaType
 import okhttp3.MultipartBody

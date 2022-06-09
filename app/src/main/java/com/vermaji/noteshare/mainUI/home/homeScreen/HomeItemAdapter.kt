@@ -1,16 +1,15 @@
-package com.vermaji.noteshare.mainUI.homeFragment
+package com.vermaji.noteshare.mainUI.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.vermaji.noteshare.database.NoteProperty
 import com.vermaji.noteshare.databinding.NoteItemViewBinding
-import com.vermaji.noteshare.mainUI.homeFragment.models.Data
-import com.vermaji.noteshare.mainUI.homeFragment.models.NoteResponse
+import com.vermaji.noteshare.mainUI.home.homeScreen.models.Data
+import com.vermaji.noteshare.mainUI.home.homeScreen.models.NoteResponse
 
 class HomeItemAdapter(private val responseData:NoteResponse,private val clickListener: HomeItemListener)
     : RecyclerView.Adapter<HomeItemAdapter.NoteItemViewHolder>() {
-    val list = responseData.list
+    private val list = responseData.list
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NoteItemViewHolder
     {
         return NoteItemViewHolder.getViewHolder(parent)

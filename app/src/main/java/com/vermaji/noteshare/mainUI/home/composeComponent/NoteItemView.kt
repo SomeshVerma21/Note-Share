@@ -1,4 +1,4 @@
-package com.vermaji.noteshare.mainUI.homeFragment.composeComponent
+package com.vermaji.noteshare.mainUI.home.composeComponent
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Row
