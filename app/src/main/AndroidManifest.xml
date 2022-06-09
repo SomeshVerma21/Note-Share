@@ -15,7 +15,9 @@
         android:usesCleartextTraffic="true">
         <activity
             android:name="com.vermaji.noteshare.mainUI.home.notesDetails.NoteDetailsActivity"
-            android:exported="false" />
+            android:exported="false">
+
+        </activity>
         <activity
             android:name=".SplashActivity"
             android:exported="true">
