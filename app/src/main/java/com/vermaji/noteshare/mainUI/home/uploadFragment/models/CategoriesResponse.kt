@@ -1,4 +1,4 @@
-package com.vermaji.noteshare.mainUI.uploadFragment.models
+package com.vermaji.noteshare.mainUI.home.uploadFragment.models
 
 
 class CategoriesResponse : ArrayList<CategoriesResponseItem>()

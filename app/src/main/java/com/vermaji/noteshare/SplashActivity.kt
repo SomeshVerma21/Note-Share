@@ -8,9 +8,8 @@ import android.os.Bundle
 import android.os.Handler
 import android.view.View
 import android.view.WindowManager
-import com.vermaji.noteshare.loginService.LoginActivity
 import com.vermaji.noteshare.loginService.session.SessionManagement
-import com.vermaji.noteshare.mainUI.MainActivity
+import com.vermaji.noteshare.mainUI.home.MainActivity
 
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : AppCompatActivity() {
@@ -28,11 +27,11 @@ class SplashActivity : AppCompatActivity() {
     {
         Handler().postDelayed(Runnable {
             if (SessionManagement(this).checkUserLogin()){
-                val intent = Intent(this,MainActivity::class.java)
+                val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
             }else
             {
-                val intent  = Intent(this,MainActivity::class.java)
+                val intent  = Intent(this, MainActivity::class.java)
                 startActivity(intent)
             }
             finish()

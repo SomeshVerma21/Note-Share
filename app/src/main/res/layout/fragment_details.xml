@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".mainUI.detailsFragment.Details"
+    tools:context=".mainUI.home.notesDetails.NoteDetailsFragment"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -36,7 +36,7 @@
                 android:layout_marginTop="20dp"
                 android:paddingHorizontal="20dp"
                 android:maxLines="5"
-                android:textSize="28dp"
+                android:textSize="27dp"
                 android:textStyle="bold"
                 android:text="Indecent Arrangements: Tabloid Affair, Secretly f ;sdf;s"
                 app:layout_constraintStart_toEndOf="@id/cv_note_image"
@@ -72,6 +72,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_note_author"
                 />
+
+            <include layout="@layout/note_item_properties"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_download_buy_note"

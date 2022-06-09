@@ -1,4 +1,4 @@
-package com.vermaji.noteshare.mainUI
+package com.vermaji.noteshare.mainUI.home
 
 import android.content.Intent
 import android.os.Bundle

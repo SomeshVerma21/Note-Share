@@ -1,4 +1,4 @@
-package com.vermaji.noteshare.mainUI.profileFragment
+package com.vermaji.noteshare.mainUI.home.profileFragment
 
 import android.os.Bundle
 import android.view.LayoutInflater

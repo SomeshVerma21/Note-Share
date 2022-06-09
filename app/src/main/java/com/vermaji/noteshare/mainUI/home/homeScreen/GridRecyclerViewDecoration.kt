@@ -1,4 +1,4 @@
-package com.vermaji.noteshare.mainUI.homeFragment
+package com.vermaji.noteshare.mainUI.home.homeScreen
 
 import android.graphics.Rect
 import android.view.View

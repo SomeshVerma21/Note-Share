@@ -17,7 +17,7 @@ import com.vermaji.noteshare.loginService.apiHelper.RetrofitAuthApi
 import com.vermaji.noteshare.loginService.models.LoginUser
 import com.vermaji.noteshare.loginService.models.Response
 import com.vermaji.noteshare.loginService.session.SessionManagement
-import com.vermaji.noteshare.mainUI.MainActivity
+import com.vermaji.noteshare.mainUI.home.MainActivity
 import com.vermaji.noteshare.network.Connectivity
 import retrofit2.Call
 import retrofit2.Callback
@@ -88,7 +88,7 @@ class Login : Fragment() {
     }
 
     private fun gotoHomeScreen(){
-        val intent = Intent(requireContext(),MainActivity::class.java)
+        val intent = Intent(requireContext(), MainActivity::class.java)
         startActivity(intent).also {
             requireActivity().finish()
         }

@@ -1,4 +1,4 @@
-package com.vermaji.noteshare.mainUI.uploadFragment
+package com.vermaji.noteshare.mainUI.home.uploadFragment
 
 import android.app.Activity.RESULT_CANCELED
 import android.app.Activity.RESULT_OK
@@ -21,8 +21,8 @@ import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.chip.Chip
 import com.vermaji.noteshare.R
 import com.vermaji.noteshare.databinding.FragmentUploadBinding
-import com.vermaji.noteshare.mainUI.uploadFragment.models.CategoriesResponse
-import com.vermaji.noteshare.mainUI.uploadFragment.models.CategoriesResponseItem
+import com.vermaji.noteshare.mainUI.home.uploadFragment.models.CategoriesResponse
+import com.vermaji.noteshare.mainUI.home.uploadFragment.models.CategoriesResponseItem
 
 
 class Upload : Fragment() {

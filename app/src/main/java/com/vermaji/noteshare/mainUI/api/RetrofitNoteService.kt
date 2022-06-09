@@ -1,7 +1,7 @@
 package com.vermaji.noteshare.mainUI.api
 
-import com.vermaji.noteshare.mainUI.homeFragment.models.NoteResponse
-import com.vermaji.noteshare.mainUI.uploadFragment.models.CategoriesResponse
+import com.vermaji.noteshare.mainUI.home.homeScreen.models.NoteResponse
+import com.vermaji.noteshare.mainUI.home.uploadFragment.models.CategoriesResponse
 import com.vermaji.noteshare.network.Endpoints
 import okhttp3.MultipartBody
 import retrofit2.Call
