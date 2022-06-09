@@ -3,25 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/NoteBook/NoteBook/app/src/main/res/drawable/ic_favorite_icon.xml" value="0.136" />
-        <entry key="..\:/NoteBook/NoteBook/app/src/main/res/drawable/ic_star_icon.xml" value="0.1345" />
-        <entry key="..\:/NoteBook/NoteBook/app/src/main/res/layout/activity_login.xml" value="0.16216216216216217" />
-        <entry key="..\:/NoteBook/NoteBook/app/src/main/res/layout/activity_main.xml" value="0.176" />
-        <entry key="..\:/NoteBook/NoteBook/app/src/main/res/layout/activity_splash.xml" value="0.15304054054054053" />
-        <entry key="..\:/NoteBook/NoteBook/app/src/main/res/layout/fragment_details.xml" value="0.20607097050021378" />
-        <entry key="..\:/NoteBook/NoteBook/app/src/main/res/layout/fragment_home.xml" value="0.152" />
-        <entry key="..\:/NoteBook/NoteBook/app/src/main/res/layout/fragment_login.xml" value="0.176" />
-        <entry key="..\:/NoteBook/NoteBook/app/src/main/res/layout/fragment_register.xml" value="0.152" />
-        <entry key="..\:/NoteBook/NoteBook/app/src/main/res/layout/fragment_upload.xml" value="0.12" />
-        <entry key="..\:/NoteBook/NoteBook/app/src/main/res/layout/home_item_list.xml" value="0.176" />
-        <entry key="..\:/NoteBook/NoteBook/app/src/main/res/layout/note_item_.xml" value="0.264" />
-        <entry key="..\:/NoteBook/NoteBook/app/src/main/res/layout/note_item_view.xml" value="0.264" />
-        <entry key="..\:/NoteBook/NoteBook/app/src/main/res/layout/sample_note_item.xml" value="0.16216216216216217" />
-        <entry key="..\:/NoteBook/NoteBook/app/src/main/res/layout/snackbar.xml" value="0.16216216216216217" />
-        <entry key="..\:/NoteBook/NoteBook/app/src/main/res/menu/main_option_menu.xml" value="0.176" />
-        <entry key="..\:/NoteBook/NoteBook/app/src/main/res/menu/navigation_menu.xml" value="0.25" />
         <entry key="..\:/NoteBook/app/src/main/res/layout/activity_login.xml" value="0.16666666666666666" />
         <entry key="..\:/NoteBook/app/src/main/res/layout/home_item_list.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/fragment_details.xml" value="0.2" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.18" />
       </map>
     </option>
