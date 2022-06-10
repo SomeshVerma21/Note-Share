@@ -17,7 +17,6 @@ class NoteDetailsActivity : AppCompatActivity() {
         fragmentManager.beginTransaction()
             .add(R.id.fg_note_details,NoteDetailsFragment.newInstance())
             .commitNow()
-
         initViews()
     }
 

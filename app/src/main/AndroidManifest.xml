@@ -14,18 +14,13 @@
         android:theme="@style/Theme.NoteBook"
         android:usesCleartextTraffic="true">
         <activity
-<<<<<<< HEAD
             android:name=".mainUI.home.searchNote.NoteSearchActivity"
             android:exported="false" />
         <activity
             android:name=".mainUI.home.notesDetails.NoteDetailsActivity"
-            android:exported="false" />
-=======
-            android:name="com.vermaji.noteshare.mainUI.home.notesDetails.NoteDetailsActivity"
-            android:exported="false">
+            android:exported="false" >
 
         </activity>
->>>>>>> e2f09edfee5f7a831104f46c6f17d16a5b2c33bf
         <activity
             android:name=".SplashActivity"
             android:exported="true">

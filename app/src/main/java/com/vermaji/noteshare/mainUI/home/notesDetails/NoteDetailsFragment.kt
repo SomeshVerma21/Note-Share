@@ -7,10 +7,10 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.vermaji.noteshare.R
-import com.vermaji.noteshare.databinding.FragmentDetailsBinding
+import com.vermaji.noteshare.databinding.FragmentNoteDetailsBinding
 
 class NoteDetailsFragment : Fragment() {
-    private lateinit var binding: FragmentDetailsBinding
+    private lateinit var binding: FragmentNoteDetailsBinding
 
     companion object{
         fun newInstance(): NoteDetailsFragment{
@@ -20,7 +20,7 @@ class NoteDetailsFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate<FragmentDetailsBinding>(inflater, R.layout.fragment_details,
+        binding = DataBindingUtil.inflate<FragmentNoteDetailsBinding>(inflater, R.layout.fragment_note_details,
             container,false)
         return binding.root
     }

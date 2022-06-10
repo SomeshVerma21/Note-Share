@@ -14,6 +14,7 @@ import com.vermaji.noteshare.R
 import com.vermaji.noteshare.database.NoteDatabase
 import com.vermaji.noteshare.databinding.ActivityMainBinding
 import com.vermaji.noteshare.loginService.LoginActivity
+import com.vermaji.noteshare.mainUI.home.searchNote.NoteSearchActivity
 import com.vermaji.noteshare.mainUI.viewModels.NoteViewModel
 import com.vermaji.noteshare.mainUI.viewModels.ViewModelFactory
 
@@ -32,7 +33,8 @@ class MainActivity : AppCompatActivity() {
                     navController.navigate(R.id.homeFragment)
                 }
                 R.id.menu_search_navigation -> {
-
+                    val intent = Intent(this,NoteSearchActivity::class.java)
+                    startActivity(intent)
                 }
                 R.id.menu_upload_navigation -> {
                     findNavController(R.id.homeScreenFragment).navigate(R.id.upload)
@@ -56,7 +58,7 @@ class MainActivity : AppCompatActivity() {
         val application = requireNotNull(this).application
         val dataSource = NoteDatabase.getInstence(application).noteDatabaseDao
         val viewModelFactory = ViewModelFactory(dataSource, application)
-        val noteViewModel = ViewModelProvider(this, viewModelFactory).get(NoteViewModel::class.java)
+        val noteViewModel = ViewModelProvider(this, viewModelFactory)[NoteViewModel::class.java]
         noteViewModel.deleteAll()
         return true
     }
