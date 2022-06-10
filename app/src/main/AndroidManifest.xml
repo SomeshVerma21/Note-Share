@@ -14,7 +14,10 @@
         android:theme="@style/Theme.NoteBook"
         android:usesCleartextTraffic="true">
         <activity
-            android:name="com.vermaji.noteshare.mainUI.home.notesDetails.NoteDetailsActivity"
+            android:name=".mainUI.home.searchNote.NoteSearchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".mainUI.home.notesDetails.NoteDetailsActivity"
             android:exported="false" />
         <activity
             android:name=".SplashActivity"
@@ -26,7 +29,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".loginService.LoginActivity" />
-        <activity android:name=".mainUI.home.MainActivity"></activity>
+        <activity android:name=".mainUI.home.MainActivity" />
     </application>
 
 </manifest>
