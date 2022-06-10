@@ -5,10 +5,23 @@
       <map>
         <entry key="..\:/NoteBook/app/src/main/res/layout/activity_login.xml" value="0.16666666666666666" />
         <entry key="..\:/NoteBook/app/src/main/res/layout/home_item_list.xml" value="0.2" />
+        <entry key="..\:/Users/pk111/AndroidStudioProjects/Note-Share/app/src/main/res/layout/activity_login.xml" value="0.3625" />
+        <entry key="..\:/Users/pk111/AndroidStudioProjects/Note-Share/app/src/main/res/layout/activity_main.xml" value="0.3625" />
+        <entry key="..\:/Users/pk111/AndroidStudioProjects/Note-Share/app/src/main/res/layout/activity_splash.xml" value="0.3625" />
+        <entry key="..\:/Users/pk111/AndroidStudioProjects/Note-Share/app/src/main/res/layout/blank_fragment.xml" value="0.3625" />
+        <entry key="..\:/Users/pk111/AndroidStudioProjects/Note-Share/app/src/main/res/layout/fragment_details.xml" value="0.3625" />
+        <entry key="..\:/Users/pk111/AndroidStudioProjects/Note-Share/app/src/main/res/layout/fragment_home.xml" value="0.3625" />
+        <entry key="..\:/Users/pk111/AndroidStudioProjects/Note-Share/app/src/main/res/layout/fragment_login.xml" value="0.3625" />
+        <entry key="..\:/Users/pk111/AndroidStudioProjects/Note-Share/app/src/main/res/layout/fragment_profile.xml" value="0.3625" />
+        <entry key="..\:/Users/pk111/AndroidStudioProjects/Note-Share/app/src/main/res/layout/fragment_register.xml" value="0.3625" />
+        <entry key="..\:/Users/pk111/AndroidStudioProjects/Note-Share/app/src/main/res/layout/fragment_upload.xml" value="0.33" />
+        <entry key="..\:/Users/pk111/AndroidStudioProjects/Note-Share/app/src/main/res/layout/home_item_list.xml" value="0.3625" />
+        <entry key="..\:/Users/pk111/AndroidStudioProjects/Note-Share/app/src/main/res/layout/note_item_view.xml" value="0.3625" />
+        <entry key="..\:/Users/pk111/AndroidStudioProjects/Note-Share/app/src/main/res/layout/snackbar.xml" value="0.1" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
