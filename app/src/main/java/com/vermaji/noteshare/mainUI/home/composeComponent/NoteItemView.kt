@@ -11,7 +11,7 @@ import com.vermaji.noteshare.R
 @Composable
 fun HomeItem(){
     Row() {
-        Image(painter = painterResource(id = R.drawable.ic_note_book) , contentDescription = "note icon")
+        Image(painter = painterResource(id = R.drawable.noteshare_logos) , contentDescription = "note icon")
 
     }
 }

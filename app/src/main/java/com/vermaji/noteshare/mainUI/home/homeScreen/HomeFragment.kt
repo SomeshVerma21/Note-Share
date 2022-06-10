@@ -48,7 +48,7 @@ class HomeFragment: Fragment() {
         val dataSource =  NoteDatabase.getInstence(application).noteDatabaseDao
         val viewModelFactory = ViewModelFactory(dataSource,application)
         noteViewModel._topDownloads.observe(viewLifecycleOwner, Observer { noteResponse ->
-            val mAdapter = HomeItemAdapter(noteResponse, HomeItemListener {
+            val mAdapter = HomeItemAdapter(requireContext(), noteResponse, HomeItemListener {
                 Toast.makeText(requireContext(),it.toString(),Toast.LENGTH_SHORT).show()
             })
             binding.idTopViewingRecyclerView.adapter = mAdapter

@@ -36,7 +36,7 @@
                 android:layout_marginTop="20dp"
                 android:paddingHorizontal="20dp"
                 android:maxLines="5"
-                android:textSize="27dp"
+                android:textSize="24dp"
                 android:textStyle="bold"
                 android:text="Indecent Arrangements: Tabloid Affair, Secretly f ;sdf;s"
                 app:layout_constraintStart_toEndOf="@id/cv_note_image"
@@ -50,7 +50,7 @@
                 android:layout_marginTop="20dp"
                 android:paddingHorizontal="20dp"
                 android:maxLines="5"
-                android:textSize="18dp"
+                android:textSize="16dp"
                 android:textStyle="bold"
                 android:textColor="@color/light_blue_400"
                 android:text="Mira Lyn Kelly · Anna Cleary · Julia James"
@@ -65,7 +65,7 @@
                 android:layout_marginTop="5dp"
                 android:paddingHorizontal="20dp"
                 android:maxLines="5"
-                android:textSize="16dp"
+                android:textSize="15dp"
                 android:textStyle="bold"
                 android:text="May 2014 · HarperCollins UK"
                 app:layout_constraintStart_toEndOf="@id/cv_note_image"
@@ -78,29 +78,145 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_download_buy_note"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="80dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="70dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
                 android:background="@color/color_primary"
                 android:text="Free Download"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
-                android:textSize="20dp"
+                android:textSize="16dp"
                 app:layout_constraintTop_toBottomOf="@+id/cv_note_image"
                 tools:layout_editor_absoluteX="10dp" />
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_free_sample"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:layout_margin="10dp"
                 android:text="Free Sample"
                 android:textAllCaps="false"
-                android:textSize="20dp"
+                android:textSize="16dp"
                 android:textColor="#00DF1E"
                 android:background="@color/cardview_light_background"
                 app:layout_constraintTop_toBottomOf="@id/btn_download_buy_note"
                 />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_about"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="About"
+                android:textSize="23dp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="10dp"
+                app:layout_constraintTop_toBottomOf="@id/btn_free_sample"
+                />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_note_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="About thif sldfldsfldsjfljdslfj sdflsajdfadjflasdjf lsdjflsadkfjlasdjflasjdflasjslfj asdlfsladjf jlasdjflasdjflasdjflajsdfljasdlf aslfjdlasdjflasdjfladsjflajs flajdslfjaslfjasldjflasjflasjflasjjfla sjdfljasdlfja sldfj"
+                android:textSize="15dp"
+                android:textColor="@color/black"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="10dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_about"
+                />
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/cg_note_chip_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_note_details"
+                >
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Romance"
+                    />
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Romance"
+                    />
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Romance"
+                    />
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Romance"
+                    />
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Romance"
+                    />
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Romance"
+                    />
+            </com.google.android.material.chip.ChipGroup>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_rating"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ratings and comments"
+                android:textSize="23dp"
+                android:textStyle="normal"
+                android:textColor="@color/black"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="10dp"
+                app:layout_constraintTop_toBottomOf="@id/cg_note_chip_group"
+                />
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_rating_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3.6"
+                android:textSize="35dp"
+                android:textStyle="normal"
+                android:textColor="@color/black"
+                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_rating"
+                />
+            <androidx.appcompat.widget.AppCompatRatingBar
+                style="@style/Widget.AppCompat.RatingBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:rating="3.6"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toEndOf="@id/tv_rating_value"
+                app:layout_constraintTop_toTopOf="@id/tv_rating_value"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/tv_rating_value"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                >
+
+                <include layout="@layout/note_comment_view"/>
+                <include layout="@layout/note_comment_view"/>
+                <include layout="@layout/note_comment_view"/>
+                <include layout="@layout/note_comment_view"/>
+
+            </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 </layout>
