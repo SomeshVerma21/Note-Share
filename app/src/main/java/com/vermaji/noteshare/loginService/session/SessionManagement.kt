@@ -25,6 +25,16 @@ class SessionManagement(val context: Context) {
         return true
     }
 
+    fun getUserInfo(): UserLoginOP{
+        return UserLoginOP(
+            id = sharedPreferences.getString(KEY_USER_ID,"")!!,
+            firstname = sharedPreferences.getString(KEY_FIRST_NAME,"")!!,
+            lastname = sharedPreferences.getString(KEY_LAST_NAME,"")!!,
+            email = sharedPreferences.getString(KEY_EMAIL,"")!!
+
+        )
+    }
+
     fun logoutUser(){
         editor.remove(KEY_USER_ID)
         editor.remove(KEY_FIRST_NAME)
