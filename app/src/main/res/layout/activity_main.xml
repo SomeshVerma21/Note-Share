@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".mainUI.home.MainActivity">
@@ -41,33 +40,30 @@
 
         </com.google.android.material.appbar.AppBarLayout>
 
-        <androidx.fragment.app.FragmentContainerView
+        <fragment
             android:id="@+id/homeScreenFragment"
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginBottom="49dp"
             app:defaultNavHost="true"
-            app:layout_constraintBottom_toBottomOf="@id/bottomNavigationView"
+            app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/appBarLayout"
             app:navGraph="@navigation/home_fragment_navigation"
-            tools:layout="@layout/fragment_home">
-        </androidx.fragment.app.FragmentContainerView>
+            tools:layout="@layout/fragment_home" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomNavigationView"
+            style="@style/Widget.MaterialComponents.BottomNavigationView.Colored"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:focusedByDefault="false"
-            app:labelVisibilityMode="unlabeled"
+            app:labelVisibilityMode="labeled"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:menu="@menu/navigation_menu" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 </layout>

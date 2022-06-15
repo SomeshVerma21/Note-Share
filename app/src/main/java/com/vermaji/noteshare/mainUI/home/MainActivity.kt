@@ -8,58 +8,74 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
-import androidx.navigation.findNavController
+import androidx.navigation.NavDestination
+import androidx.navigation.Navigation
 import com.google.firebase.database.FirebaseDatabase
 import com.vermaji.noteshare.R
 import com.vermaji.noteshare.database.NoteDatabase
 import com.vermaji.noteshare.databinding.ActivityMainBinding
-import com.vermaji.noteshare.loginService.LoginActivity
 import com.vermaji.noteshare.mainUI.home.searchNote.NoteSearchActivity
 import com.vermaji.noteshare.mainUI.viewModels.NoteViewModel
 import com.vermaji.noteshare.mainUI.viewModels.ViewModelFactory
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var firebaseDatabase: FirebaseDatabase
     private lateinit var binding: ActivityMainBinding
+    private lateinit var navController:NavController
+    private var currentFragment:Int = R.id.menu_home_navigation
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
-        firebaseDatabase = FirebaseDatabase.getInstance()
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        navController = Navigation.findNavController(this, R.id.homeScreenFragment)
         binding.bottomNavigationView.setOnItemSelectedListener {
-            val navController: NavController = findNavController(R.id.homeScreenFragment)
-            when (it.itemId) {
+            when(it.itemId){
                 R.id.menu_home_navigation -> {
-                    navController.navigate(R.id.homeFragment)
+                    if (navController.currentDestination?.id!=R.id.homeFragment){
+                        navController.popBackStack(R.id.homeFragment,true)
+                        navController.navigate(R.id.homeFragment)
+                    }
                 }
                 R.id.menu_search_navigation -> {
-                    val intent = Intent(this,NoteSearchActivity::class.java)
+                    val intent = Intent(this , NoteSearchActivity::class.java)
                     startActivity(intent)
                 }
                 R.id.menu_upload_navigation -> {
-                    findNavController(R.id.homeScreenFragment).navigate(R.id.upload)
+                    if (navController.currentDestination?.id != R.id.upload) {
+                        navController.popBackStack(R.id.upload,true)
+                        navController.navigate(R.id.upload)
+                    }
                 }
                 R.id.menu_profile_navigation -> {
-                    findNavController(R.id.homeScreenFragment).navigate(R.id.profile)
-                    val intent = Intent(this, LoginActivity::class.java)
-                    //startActivity(intent)
+                    if (navController.currentDestination?.id != R.id.profile) {
+                        navController.popBackStack(R.id.profile,true)
+                        navController.navigate(R.id.profile)
+                    }
                 }
             }
             true
         }
+        navController.addOnDestinationChangedListener(
+            NavController.OnDestinationChangedListener{ _nav: NavController,
+                                                        navDestination: NavDestination, bundle: Bundle? ->
+                when(navDestination.id){
+                    R.id.homeFragment -> {
+                        binding.bottomNavigationView.menu.findItem(R.id.menu_home_navigation).isChecked = true
+                        currentFragment = R.id.menu_home_navigation
+                    }
+                    R.id.upload -> {
+                        binding.bottomNavigationView.menu.findItem(R.id.menu_upload_navigation).isChecked=true
+                        currentFragment = R.id.menu_upload_navigation
+                    }
+                    R.id.profile -> {
+                        binding.bottomNavigationView.menu.findItem(R.id.menu_profile_navigation).isChecked=true
+                        currentFragment = R.id.menu_profile_navigation
+                    }
+                }
+            })
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.main_option_menu, menu)
-        return true
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        val application = requireNotNull(this).application
-        val dataSource = NoteDatabase.getInstence(application).noteDatabaseDao
-        val viewModelFactory = ViewModelFactory(dataSource, application)
-        val noteViewModel = ViewModelProvider(this, viewModelFactory)[NoteViewModel::class.java]
-        noteViewModel.deleteAll()
-        return true
+    override fun onResume() {
+        super.onResume()
+        binding.bottomNavigationView.selectedItemId = currentFragment
     }
 }

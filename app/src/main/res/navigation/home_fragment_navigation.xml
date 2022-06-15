@@ -8,21 +8,7 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.vermaji.noteshare.mainUI.home.homeScreen.HomeFragment"
-        android:label="HomeFragment">
-        <action
-            android:id="@+id/action_homeFragment_to_details"
-            app:destination="@id/details"
-            app:popUpTo="@id/details" />
-        <action
-            android:id="@+id/action_homeFragment_to_profile"
-            app:destination="@id/profile"
-            app:popUpTo="@id/profile" />
-        <action
-            android:id="@+id/action_homeFragment_to_upload"
-            app:destination="@id/upload"
-            app:popUpTo="@id/homeFragment"
-            app:popUpToInclusive="false" />
-    </fragment>
+        android:label="HomeFragment"/>
     <fragment
         android:id="@+id/details"
         android:name="com.vermaji.noteshare.mainUI.home.notesDetails.NoteDetailsFragment"

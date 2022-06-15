@@ -11,7 +11,12 @@
         <ScrollView
             android:id="@+id/scrollView2"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/idBtnUpload"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -200,13 +205,16 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/idBtnUpload"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="45dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/colored_corner_background"
             android:text="Upload File"
-            android:background="@color/color_primary"
-            android:textSize="18sp"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp"
             android:textStyle="bold"
-            android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="@+id/scrollView2"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent" />
