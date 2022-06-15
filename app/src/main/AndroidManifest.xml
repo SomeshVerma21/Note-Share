@@ -14,13 +14,15 @@
         android:theme="@style/Theme.NoteBook"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".mainUI.home.fileViewer.FileViewerActivity"
+            android:exported="false"
+            />
+        <activity
             android:name=".mainUI.home.searchNote.NoteSearchActivity"
             android:exported="false" />
         <activity
             android:name=".mainUI.home.notesDetails.NoteDetailsActivity"
-            android:exported="false" >
-
-        </activity>
+            android:exported="false" />
         <activity
             android:name=".SplashActivity"
             android:exported="true">
