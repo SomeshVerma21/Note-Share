@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.vermaji.noteshare.mainUI.api.RetrofitNoteService
 import com.vermaji.noteshare.mainUI.home.uploadFragment.models.CategoriesResponse
+import com.vermaji.noteshare.mainUI.home.uploadFragment.models.NoteInputData
 import kotlinx.coroutines.launch
 import okhttp3.MediaType
 import okhttp3.MultipartBody
@@ -18,6 +19,7 @@ import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.io.File
 import java.nio.file.Files
 import java.nio.file.Paths
 
@@ -54,20 +56,24 @@ class UploadViewModel: ViewModel() {
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
-    fun uploadFile(uri:Uri){
+    fun uploadFile(uri:Uri, noteInputData: NoteInputData){
         val buffer = Files.readAllBytes(Paths.get(uri.toString()))
         val requestBody = MultipartBody.Builder().setType(MultipartBody.FORM)
             .addFormDataPart("file",uri.toFile().name,
             RequestBody.create(MediaType.parse("application/pdf"),
-                buffer))
-            .addFormDataPart("id","12")
-            .addFormDataPart("name","book")
-            .addFormDataPart("desc","fjlsd flsdfj")
-            .addFormDataPart("userId","sdfdsf")
-            .addFormDataPart("category","learn")
-            .addFormDataPart("subCategory","hh")
-            .addFormDataPart("tags","tag1")
-            .addFormDataPart("tags","tag2")
+                buffer)).apply {
+                addFormDataPart("id",noteInputData.id.toString())
+                addFormDataPart("name",noteInputData.title)
+                addFormDataPart("desc",noteInputData.desc)
+                addFormDataPart("userId",noteInputData.userId)
+                addFormDataPart("category",noteInputData.category)
+                addFormDataPart("subCategory",noteInputData.subCategory)
+                addFormDataPart("userName",noteInputData.userName)
+                addFormDataPart("uploadTime",noteInputData.uploadTime)
+                for (tag in noteInputData.tags){
+                    addFormDataPart("tags",tag)
+                }
+            }
             .build();
         viewModelScope.launch {
             val api = RetrofitNoteService.retrofitService.uploadFile(requestBody)

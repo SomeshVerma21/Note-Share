@@ -21,8 +21,11 @@ import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.chip.Chip
 import com.vermaji.noteshare.R
 import com.vermaji.noteshare.databinding.FragmentUploadBinding
+import com.vermaji.noteshare.loginService.session.SessionManagement
 import com.vermaji.noteshare.mainUI.home.uploadFragment.models.CategoriesResponse
 import com.vermaji.noteshare.mainUI.home.uploadFragment.models.CategoriesResponseItem
+import com.vermaji.noteshare.mainUI.home.uploadFragment.models.NoteInputData
+import java.util.concurrent.TimeUnit
 
 
 class Upload : Fragment() {
@@ -93,7 +96,19 @@ class Upload : Fragment() {
             if (fileUri!=null){
                 if (title.isNotEmpty()&&desc.isNotEmpty()&&category.isNotEmpty()&&subCategory.isNotEmpty()
                     &&language.isNotEmpty()){
-                    viewModel.uploadFile(fileUri!!)
+                    val userInfo = SessionManagement(requireContext()).getUserInfo()
+                    viewModel.uploadFile(fileUri!!, NoteInputData(
+                        id = userInfo.id,
+                        desc = desc,
+                        category = category,
+                        subCategory = subCategory,
+                        language = language,
+                        title = title,
+                        uploadTime = System.currentTimeMillis().toString(),
+                        tags = arrayListOf("Knowledge", "Study", "common Paper", "Govt Exam"),
+                        userId = userInfo.id,
+                        userName = userInfo.firstname + userInfo.lastname
+                    ))
                 }else{
                     Toast.makeText(requireContext(),"One or more fields are empty",Toast.LENGTH_SHORT).show()
                 }
