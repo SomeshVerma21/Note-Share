@@ -8,7 +8,7 @@
             type="com.vermaji.noteshare.mainUI.home.homeScreen.models.Data" />
         <variable
             name="clickListener"
-            type="com.vermaji.noteshare.mainUI.home.HomeItemListener" />
+            type="com.vermaji.noteshare.mainUI.home.homeScreen.adapter.HomeItemListener" />
     </data>
     <com.google.android.material.card.MaterialCardView
         android:layout_width="wrap_content"

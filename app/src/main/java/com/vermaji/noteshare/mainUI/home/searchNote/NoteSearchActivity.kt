@@ -4,8 +4,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
 import com.vermaji.noteshare.R
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
-class NoteSearchActivity : AppCompatActivity() {
+class NoteSearchActivity : AppCompatActivity(){
     private lateinit var toolbar: Toolbar
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,9 +23,5 @@ class NoteSearchActivity : AppCompatActivity() {
         toolbar.setNavigationOnClickListener {
             onBackPressed()
         }
-    }
-
-    private fun updateSearchData(){
-
     }
 }

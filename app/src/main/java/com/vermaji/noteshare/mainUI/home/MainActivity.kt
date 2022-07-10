@@ -54,24 +54,26 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
-        navController.addOnDestinationChangedListener(
-            NavController.OnDestinationChangedListener{ _nav: NavController,
+        navController.addOnDestinationChangedListener { _nav: NavController,
                                                         navDestination: NavDestination, bundle: Bundle? ->
-                when(navDestination.id){
-                    R.id.homeFragment -> {
-                        binding.bottomNavigationView.menu.findItem(R.id.menu_home_navigation).isChecked = true
-                        currentFragment = R.id.menu_home_navigation
-                    }
-                    R.id.upload -> {
-                        binding.bottomNavigationView.menu.findItem(R.id.menu_upload_navigation).isChecked=true
-                        currentFragment = R.id.menu_upload_navigation
-                    }
-                    R.id.profile -> {
-                        binding.bottomNavigationView.menu.findItem(R.id.menu_profile_navigation).isChecked=true
-                        currentFragment = R.id.menu_profile_navigation
-                    }
+            when (navDestination.id) {
+                R.id.homeFragment -> {
+                    binding.bottomNavigationView.menu.findItem(R.id.menu_home_navigation).isChecked =
+                        true
+                    currentFragment = R.id.menu_home_navigation
                 }
-            })
+                R.id.upload -> {
+                    binding.bottomNavigationView.menu.findItem(R.id.menu_upload_navigation).isChecked =
+                        true
+                    currentFragment = R.id.menu_upload_navigation
+                }
+                R.id.profile -> {
+                    binding.bottomNavigationView.menu.findItem(R.id.menu_profile_navigation).isChecked =
+                        true
+                    currentFragment = R.id.menu_profile_navigation
+                }
+            }
+        }
     }
 
     override fun onResume() {

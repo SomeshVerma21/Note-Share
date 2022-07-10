@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:aandroid="http://schemas.android.com/apk/distribution"
     package="com.vermaji.noteshare">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -12,7 +14,8 @@
         android:roundIcon="@drawable/noteshare_logos"
         android:supportsRtl="true"
         android:theme="@style/Theme.NoteBook"
-        android:usesCleartextTraffic="true">
+        android:networkSecurityConfig="@xml/network_sequerity"
+        aandroid:usesCleartextTraffic="true">
         <activity
             android:name=".mainUI.home.fileViewer.FileViewerActivity"
             android:exported="false"

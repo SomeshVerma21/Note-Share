@@ -7,7 +7,7 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 data class NoteResponse(
     @Json(name = "list")
-    val list: List<Data>,
+    val data: List<Data>,
     @Json(name = "message")
     val message: String,
     @Json(name = "status")
