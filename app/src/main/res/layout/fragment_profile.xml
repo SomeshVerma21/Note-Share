@@ -2,74 +2,115 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/idHeaderLayout"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/ic_layer1"
-                >
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/idProfileImage"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    android:layout_marginTop="30dp"
-                    app:strokeWidth="2dp"
-                    android:padding="2dp"
-                    app:strokeColor="@color/teal_700"
-                    app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
-                    android:src="@drawable/noteshare_logos"
-                    />
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/idUserFullName"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Xavior Dev"
-                    android:gravity="center"
-                    android:textColor="@color/black"
-                    android:textSize="25sp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="10dp"
-                    app:layout_constraintTop_toBottomOf="@id/idProfileImage"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    />
-                <androidx.appcompat.widget.AppCompatTextView
-                    android:id="@+id/idUserEmail"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="xavior8809@gmail.com"
-                    android:gravity="center"
-                    android:textColor="@color/black"
-                    android:textSize="16sp"
-                    android:textStyle="normal"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    app:layout_constraintTop_toBottomOf="@id/idUserFullName"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/idMainContainerLayout"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#B6B6B6"
-                app:layout_constraintTop_toBottomOf="@id/idHeaderLayout"
-                >
+        android:layout_height="match_parent">
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/firstconstraintlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:id="@+id/idProfileBackground"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginBottom="7dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toTopOf="@+id/imageView4"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ad" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/idprofile_image"
+                android:layout_width="96dp"
+                android:layout_height="96dp"
+                android:src="@drawable/noteshare_logos"
+                app:civ_border_color="#FF000000"
+                app:civ_border_width="2dp"
+                app:layout_constraintBottom_toBottomOf="@+id/idProfileBackground"
+                app:layout_constraintEnd_toEndOf="@+id/idProfileBackground"
+                app:layout_constraintStart_toStartOf="@+id/idProfileBackground"
+                app:layout_constraintTop_toBottomOf="@+id/idProfileBackground" />
+
+            <ImageView
+                android:id="@+id/idChangeBackGroundImage"
+                android:layout_width="48dp"
+                android:layout_height="27dp"
+                android:layout_marginBottom="60dp"
+                android:src="@drawable/camera"
+                app:layout_constraintBottom_toBottomOf="@+id/idProfileBackground"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.955"
+                app:layout_constraintStart_toStartOf="@+id/idProfileBackground"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.878">
+
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="41dp"
+                android:layout_height="29dp"
+                android:layout_marginTop="72dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.801"
+                app:layout_constraintStart_toEndOf="@+id/idprofile_image"
+                app:layout_constraintTop_toBottomOf="@+id/idChangeBackGroundImage"
+                app:srcCompat="@drawable/edit" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="391dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="11dp"
+
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="9dp"
+                android:gravity="center"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:text="Pradeep kumar"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/idprofile_image" />
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="390dp"
+                android:layout_height="30dp"
+
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:gravity="center"
+                android:paddingTop="5dp"
+                android:text="IET Agra"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/description"
+                >
+                <include layout="@layout/activity_demo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </androidx.cardview.widget.CardView>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </ScrollView>
 </layout>
