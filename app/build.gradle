@@ -97,4 +97,7 @@ dependencies {
 
 
     implementation 'com.facebook.shimmer:shimmer:0.4.0@aar'
+    //Circular Image view
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    //diagonal
 }
