@@ -8,15 +8,14 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.vermaji.noteshare.R
 import com.vermaji.noteshare.databinding.FragmentNoteDetailsBinding
-import com.vermaji.noteshare.mainUI.api.RetrofitNoteService
-import com.vermaji.noteshare.mainUI.home.notesDetails.models.Data
-import com.vermaji.noteshare.mainUI.home.notesDetails.models.NoteDetails
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import com.vermaji.noteshare.mainUI.home.notesDetails.repo.NoteDetailRepoImpl
+import com.vermaji.noteshare.mainUI.home.notesDetails.repo.NoteDetailsRepo
+import com.vermaji.noteshare.mainUI.viewModels.NoteDetailsVMFactory
 
 class NoteDetailsFragment(noteId:Int) : Fragment() {
     private lateinit var binding: FragmentNoteDetailsBinding
+    private lateinit var noteDetailsRepo : NoteDetailsRepo
+    private lateinit var viewModel: NoteDetailsViewModel
     private var noteId:Int = noteId
 
     companion object{
@@ -27,42 +26,20 @@ class NoteDetailsFragment(noteId:Int) : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate<FragmentNoteDetailsBinding>(inflater, R.layout.fragment_note_details,
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_note_details,
             container,false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        noteDetailsRepo = NoteDetailRepoImpl()
+        viewModel = NoteDetailsVMFactory(noteDetailsRepo).create(NoteDetailsViewModel::class.java)
+        doNetworkCall()
     }
 
     private fun doNetworkCall(){
-
+        viewModel.loadNoteDetails(2)
     }
 
-    private fun loadNoteDetails(){
-        val call = RetrofitNoteService.retrofitService.getNoteDetailsById(noteId = noteId)
-        call.enqueue(object : Callback<NoteDetails> {
-            override fun onResponse(call: Call<NoteDetails>, response: Response<NoteDetails>) {
-                if (response.isSuccessful){
-                    response.body()?.let { updateNoteData(it) }
-                }
-            }
-
-            override fun onFailure(call: Call<NoteDetails>, t: Throwable) {
-
-            }
-        })
-    }
-
-    private fun updateNoteData(noteDetails: NoteDetails){
-        val data:Data
-        if (noteDetails.data.isNotEmpty()){
-            data = noteDetails.data[0]
-            binding.tvNoteTitle.text = data.name
-            binding.tvNoteAuthor.text = data.userName
-            binding.tvAbout.text = data.desc
-        }
-    }
 }
