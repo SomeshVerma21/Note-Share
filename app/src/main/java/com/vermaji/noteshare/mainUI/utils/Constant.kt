@@ -2,9 +2,9 @@ package com.vermaji.noteshare.mainUI.utils
 
 interface Constant {
     companion object{
-        val STATUS_START = "START"
-        val STATUS_SUCCESS = "SUCCESS"
-        val STATUS_FAILED = "FAILED"
-        val STATUS_EMPTY_DATA = "EMPTY_DATA"
+        const val STATUS_START = "START"
+        const val STATUS_SUCCESS = "SUCCESS"
+        const val STATUS_FAILED = "FAILED"
+        const val STATUS_EMPTY_DATA = "EMPTY_DATA"
     }
 }

@@ -39,7 +39,7 @@ class NoteDetailsFragment(noteId:Int) : Fragment() {
     }
 
     private fun doNetworkCall(){
-        viewModel.loadNoteDetails(2)
+       // viewModel.loadNoteDetails(2)
     }
 
 }

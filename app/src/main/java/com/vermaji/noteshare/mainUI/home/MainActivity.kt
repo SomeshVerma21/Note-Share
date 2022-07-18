@@ -2,21 +2,14 @@ package com.vermaji.noteshare.mainUI.home
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination
 import androidx.navigation.Navigation
-import com.google.firebase.database.FirebaseDatabase
 import com.vermaji.noteshare.R
-import com.vermaji.noteshare.database.NoteDatabase
 import com.vermaji.noteshare.databinding.ActivityMainBinding
 import com.vermaji.noteshare.mainUI.home.searchNote.NoteSearchActivity
-import com.vermaji.noteshare.mainUI.viewModels.NoteViewModel
-import com.vermaji.noteshare.mainUI.viewModels.ViewModelFactory
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
